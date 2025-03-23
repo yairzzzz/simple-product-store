@@ -30,7 +30,7 @@ const ProductCard = ({ product }) => {
   const toast = useToast();
 
   const handleDeleteProduct = async (id) => {
-    const { success, message, data } = await deleteProduct(id);
+    const { success, message } = await deleteProduct(id);
     if (!success) {
       toast({
         title: "Error",
@@ -86,7 +86,7 @@ const ProductCard = ({ product }) => {
       <Image
         src={product.image}
         alt={product.name}
-        h={48}
+        h={60}
         w={"full"}
         objectFit={"cover"}
       />

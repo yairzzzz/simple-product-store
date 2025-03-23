@@ -42,6 +42,10 @@ export const updateProduct = async (req, res) => {
   }
 
   try {
+    console.log("IP:", req.ip);
+    console.log("User Agent:", req.get("User-Agent"));
+    console.log("Request body:", req.body);
+    console.log("Time:", new Date().toISOString());
     const updatedProduct = await Product.findByIdAndUpdate(id, product, {
       new: true,
     });
