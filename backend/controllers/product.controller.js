@@ -40,7 +40,6 @@ export const updateProduct = async (req, res) => {
       .status(404)
       .json({ success: false, message: "Invalid Product ID" });
   }
-
   try {
     const updatedProduct = await Product.findByIdAndUpdate(id, product, {
       new: true,
